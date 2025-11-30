@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardioScan: Yurak-Qon Tomir Kasalliklarini Erta Aniqlahsh Tizimi</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Asosiy shrift va fon sozlamalari */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc; /* Engil fon rangi */
+            color: #1e293b;
+        }
+        /* Asosiy kontent uchun maksimal kenglikni oshirish */
+        .page-container {
+            max-width: 1400px; /* Katta ekranlarda ko'proq kenglik */
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        /* Xavf darajasi uchun ranglar */
+        .risk-high {
+            background-color: #fee2e2;
+            color: #b91c1c;
+        }
+        /* Gradient Button for CTA (Hover effekti Tailwind-dan tashqarida saqlangan) */
+        .cta-button {
+            background-image: linear-gradient(to right, #ef4444 0%, #dc2626 51%, #ef4444 100%);
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+        }
+        .cta-button:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+        }
+        /* Custom progress bar styles for demo */
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #e5e7eb;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background-color: #f87171;
+            transition: width 0.5s ease;
+        }
+
+        /* Hover effektlarini umumiy klasslar bilan ta'minlash */
+        .hover-lift {
+            transition: all 0.3s ease-in-out;
+        }
+        .hover-lift:hover {
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(-5px) scale(1.01);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Hero Section -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <!-- Markazlashtirilgan container qo'llanildi -->
+        <div class="page-container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-red-600 flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                CardioScan
+            </h1>
+            <nav class="hidden md:flex space-x-6 text-gray-600">
+                <a href="#muammo" class="hover:text-red-600 transition duration-150">Muammo</a>
+                <a href="#yechim" class="hover:text-red-600 transition duration-150">Yechim</a>
+                <a href="#demo" class="hover:text-red-600 transition duration-150">Demo Natija</a>
+                <a href="#jamoa" class="hover:text-red-600 transition duration-150">Jamoa</a>
+                <a href="#qanday-hal" class="hover:text-red-600 transition duration-150">Texnologiya</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-10">
+
+        <!-- HERO Section -->
+        <section class="page-container mx-auto px-4 text-center py-20 bg-white rounded-xl shadow-lg mb-12">
+            <p class="text-sm font-semibold text-red-600 uppercase mb-2">Sog‘liqni Saqlash / Profilaktik Tibbiyot</p>
+            <h2 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight text-gray-900">
+                <span class="text-red-600">CardioScan:</span> Yurak Kasalliklarini Erta Aniqlash
+            </h2>
+            <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Sun'iy intellekt (AI) asosidagi platforma yordamida bemorning oddiy biometrik ma'lumotlari asosida kelgusi 5 yil ichida YQKT rivojlanish xavfini yuqori aniqlikda baholang.
+            </p>
+            <a href="#demo" class="cta-button inline-block">
+                Xavf Indeksini Tekshirish (Demo)
+            </a>
+            <p class="text-xs mt-4 text-gray-500">Bu faqat kontseptual demo.</p>
+        </section>
+
+        <!-- 1. Muammo va Faktlar Section -->
+        <section id="muammo" class="page-container mx-auto px-4 py-16">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800">
+                <span class="text-red-600"> Muammo:</span> Yurak kasalliklarini erta bosqichda aniqlanmasligi?
+            </h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Fakt 1: hover-lift klassi qo'llanildi -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-red-600 hover-lift">
+                    <p class="text-4xl font-extrabold text-red-600">57.2%</p>
+                    <p class="text-sm text-gray-500 mt-2">Eng katta o'lim sababchisi:</p>
+                    <p class="font-medium mt-1">2024-yilning dastlabki 9 oyida qayd etilgan o'limlarning qon aylanish tizimi kasalliklaridan kelib chiqqan ulushi.</p>
+                </div>
+                <!-- Fakt 2: hover-lift klassi qo'llanildi -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-red-600 hover-lift">
+                    <p class="text-4xl font-extrabold text-red-600">№ 3</p>
+                    <p class="text-sm text-gray-500 mt-2">Jahon reytingidagi o'rin:</p>
+                    <p class="font-medium mt-1">JSST ma'lumotlariga ko'ra, yurak ishemik kasalliklaridan o'lim darajasi bo'yicha dunyodagi eng yuqori ko'rsatkichlarga ega davlatlar qatorida (ayrim manbalarga ko'ra).</p>
+                </div>
+                <!-- Fakt 3: hover-lift klassi qo'llanildi -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-red-600 hover-lift">
+                    <p class="text-4xl font-extrabold text-red-600">16-18</p>
+                    <p class="text-sm text-gray-500 mt-2">Kasallikning "Yoshlashishi":</p>
+                    <p class="font-medium mt-1">Ilgari keksa yoshda uchragan infarkt va insult holatlari endilikda erta yoshdagi insonlarda ham qayd etilmoqda.</p>
+                </div>
+                <!-- Fakt 4: hover-lift klassi qo'llanildi -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-red-600 hover-lift">
+                    <p class="text-4xl font-extrabold text-red-600">29</p>
+                    <p class="text-sm text-gray-500 mt-2">Kardiologlar yetishmovchiligi:</p>
+                    <p class="font-medium mt-1">O'zbekistonda har million aholiga to'g'ri keladigan kardiologlar soni (Yevropa davlatlariga nisbatan sezilarli darajada past).</p>
+                </div>
+            </div>
+
+            <div class="mt-12 p-8 bg-red-50 rounded-lg border border-red-200">
+                <p class="text-xl font-semibold text-gray-800">
+                    <span class="text-red-600 mr-2">Asosiy Muammo:</span> Mahalliy tibbiy xodimlarning soni va yuqori texnologiyali diagnostika uskunalariga cheklangan kirish imkoniyati tufayli, aholining katta qismi uchun YQKT xavfini erta aniqlash va individual profilaktika rejasini yaratish qiyin kechmoqda.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. Yechim: CardioScan Section -->
+        <section id="yechim" class="page-container mx-auto px-4 py-16">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800">
+                <span class="text-red-600">Yechim:</span> CardioScan – AI Asosidagi Aniqlash Tizimi
+            </h3>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <!-- Yechim 1: hover-lift klassi qo'llanildi -->
+                <div class="bg-white p-8 rounded-lg shadow-xl hover-lift">
+                    <svg class="w-12 h-12 text-red-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.044M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h4 class="text-xl font-semibold mb-3">Erta xavfni taxmin qilish</h4>
+                    <p class="text-gray-600">Oddiy ma'lumotlar (yosh, chekish, laboratoriya natijalari va boshqalar) asosida kelgusi 5 yillik xavfni baholash.</p>
+                </div>
+                <!-- Yechim 2: hover-lift klassi qo'llanildi -->
+                <div class="bg-white p-8 rounded-lg shadow-xl hover-lift">
+                    <svg class="w-12 h-12 text-red-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                    <h4 class="text-xl font-semibold mb-3">Shaxsiylashtirilgan tavsiyalar</h4>
+                    <p class="text-gray-600">Xavf darajasiga asoslangan holda sog'lom turmush tarzi, ovqatlanish va mashqlar bo'yicha avtomatik maslahatlar (Generative AI).</p>
+                </div>
+                <!-- Yechim 3: hover-lift klassi qo'llanildi -->
+                <div class="bg-white p-8 rounded-lg shadow-xl hover-lift">
+                    <svg class="w-12 h-12 text-red-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M12 20.354a4 4 0 100-5.292"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.791 8.517L12 12m0 0L5.208 8.517M12 12v6.848"></path></svg>
+                    <h4 class="text-xl font-semibold mb-3">Saralash sifatini oshirish</h4>
+                    <p class="text-gray-600">Yuqori xavf guruhidagi shaxslarni tezkor aniqlash va ularni zudlik bilan kardiolog ko'rigiga yo'naltirish.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Prototip Vizualizatsiyasi (Demo Natija) -->
+        <section id="demo" class="page-container mx-auto px-4 py-16">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800">
+                <span class="text-red-600">Prototip Demo:</span> AI Tahlili Qanday Ko'rinadi?
+            </h3>
+            <div class="grid md:grid-cols-2 gap-8 ai-result-card bg-white p-6 rounded-xl shadow-lg">
+                <!-- Natija: Xavf Indeksi -->
+                <div class="p-6 text-center bg-red-50 rounded-lg">
+                    <p class="text-lg font-medium text-gray-700 mb-4">Sizning Yurak Xavfi Indeksingiz (5 Yil)</p>
+                    <p class="text-8xl font-extrabold text-red-600 leading-none mb-4">78%</p>
+                    <div class="progress-bar mx-auto max-w-sm">
+                        <div class="progress-fill" style="width: 78%;"></div>
+                    </div>
+                    <p class="text-sm font-semibold mt-4 risk-high inline-block px-3 py-1 rounded-full">YUQORI XAVF GURUHI</p>
+                    <p class="text-gray-500 mt-2">Bu ma'lumotlarga ega shaxslarda YQKT rivojlanish ehtimoli yuqori.</p>
+                </div>
+                
+                <!-- Tushuntirish: XAI Natijasi -->
+                <div class="p-6 bg-gray-50 rounded-lg">
+                    <h4 class="text-xl font-semibold mb-4 text-gray-800 flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        AI Tushuntirishi
+                    </h4>
+                    <p class="text-gray-600 mb-4">AI modelining xulosasiga eng ko'p ta'sir qilgan omillar:</p>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between items-center text-gray-700 border-b pb-2">
+                            <span class="font-medium">Yosh (55 yosh):</span>
+                            <span class="font-bold text-red-600">↑ 45% ta'sir</span>
+                        </li>
+                        <li class="flex justify-between items-center text-gray-700 border-b pb-2">
+                            <span class="font-medium">Chekish odati (Hozirgi):</span>
+                            <span class="font-bold text-red-600">↑ 30% ta'sir</span>
+                        </li>
+                        <li class="flex justify-between items-center text-gray-700 pb-2">
+                            <span class="font-medium">Qon bosimi (145/95):</span>
+                            <span class="font-bold text-red-600">↑ 15% ta'sir</span>
+                        </li>
+                    </ul>
+
+                    <div class="mt-6 p-4 border-l-4 border-red-500 bg-white shadow-sm">
+                        <p class="font-semibold text-gray-800 mb-1">Generative AI Tavsiyasi:</p>
+                        <p class="text-sm text-gray-600 italic">"Yuqori xavfingizni kamaytirish uchun chekishni zudlik bilan to'xtatish va haftasiga kamida 150 daqiqa tez yurishni tavsiya qilamiz. Bu sizning risk omilingizni sezilarli darajada pasaytirishi mumkin."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Jamoa Haqida Ma'lumot Section -->
+        <section id="jamoa" class="page-container mx-auto px-4 py-16 bg-white rounded-xl shadow-lg mb-12">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800">
+                <span class="text-red-600">Jamoa:</span> Loyihaning Yagona Muallifi
+            </h3>
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+                Men ushbu loyihaning yagona mutaxassisi (Developer) hisoblanaman. Men AI, Backend va Frontend integratsiyasini to'liq o'z zimmamga olaman.
+            </p>
+
+            <div class="flex justify-center"> <!-- Use flex to center the single card -->
+                <!-- Jamoa a'zosi 1: Baqoyev Feruzbek (Yagona A'zo) - hover-lift klassi qo'llanildi -->
+                <div class="w-full max-w-sm text-center p-6 border rounded-lg shadow-xl hover-lift hover:border-red-600">
+                    <div class="w-24 h-24 bg-red-100 rounded-full mx-auto mb-4 flex items-center justify-center text-red-600 text-3xl font-bold">BF</div>
+                    <h4 class="text-xl font-semibold">Baqoyev Feruzbek</h4>
+                    <p class="text-red-600 font-medium">Developer</p>
+                    <p class="text-sm text-gray-500 mt-3">Ko’nikmalar: Python (AI/Backend), React (Frontend)</p>
+                   
+                </div>
+            </div>
+            
+            
+        </section>
+
+        <!-- 4. Nega Aynan Bizning Jamoa Section -->
+        <section class="page-container mx-auto px-4 py-16">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800">
+                <span class="text-red-600">Nega Biz?</span> Muammoni Hal Qila Olishimning Asosi
+            </h3>
+            <!-- Har bir fikr alohida kartochkaga ajratildi va hover effektlari qo'shildi -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Sabab 1: hover-lift klassi qo'llanildi -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-red-600 hover-lift">
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-2">To'liq Stack Tajriba</h4>
+                    <p class="text-gray-600">Biz AI modelini yaratishdan tortib (Python), uni miqyosli (scalable) Backend (Flask/Django) orqali Front-end (React) interfeysi bilan bog'lashgacha bo'lgan barcha bosqichlarni mustaqil boshqara olaman.</p>
+                </div>
+                <!-- Sabab 2: hover-lift klassi qo'llanildi -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-red-600 hover-lift">
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-2">Fokus va Ijtimoiy Motivatsiya</h4>
+                    <p class="text-gray-600">O'zbekistonda YQKT tufayli yuzaga kelayotgan o'limlar ushbu loyiha uchun kuchli ijtimoiy motivatsiya manbai hisoblanadi. Maqsadim — foydali, amalga oshirilishi mumkin bo'lgan yechim yaratish.</p>
+                </div>
+                <!-- Sabab 3: hover-lift klassi qo'llanildi -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-red-600 hover-lift">
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-2">Shaxsiy Tajriba</h4>
+                    <p class="text-gray-600">Men avvalgi loyihalarimda katta hajmdagi ma'lumotlarni qayta ishlash, jumladan geofazoviy tahlil va noan'anaviy ma'lumotlardan foydalanish bo'yicha mustaqil ishlagan tajribaga egaman.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Yo‘l Xaritasi (Roadmap) Section (Vaqt olib tashlandi, bosqichlar to'g'rilandi) -->
+        <section id="roadmap" class="page-container mx-auto px-4 py-16 bg-gray-100 rounded-xl shadow-inner mb-12">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800">
+                <span class="text-red-600">Yo‘l Xaritasi:</span> Bosqichma-Bosqich Rivojlanish Rejasi
+            </h3>
+            
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Timeline element -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 bg-red-300 h-full hidden md:block"></div>
+
+                <!-- Bosqich 1: G'oya (Hozirgi) -->
+                <div class="relative mb-8 flex justify-between items-center w-full md:left-auto md:right-auto md:flex-row-reverse">
+                    <div class="w-full md:w-5/12 p-4 bg-white rounded-lg shadow-md border-t-4 border-red-600 hover-lift">
+                        <span class="text-sm font-semibold text-red-600">1-Bosqich</span>
+                        <h4 class="text-xl font-bold mt-1">1. Kontsept va Demo (Hozirgi)</h4>
+                        <p class="text-gray-600">Muammoni aniqlash, texnologik asoslash (Proof of Concept), AI simulyatsiya demo-versiyasini yaratish.</p>
+                    </div>
+                    <div class="w-10 h-10 bg-red-600 rounded-full absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center text-white font-bold hidden md:flex">1</div>
+                </div>
+
+                <!-- Bosqich 2: Prototip (AI500 natijasi) -->
+                <div class="relative mb-8 flex justify-between items-center w-full">
+                    <div class="w-full md:w-5/12 p-4 bg-white rounded-lg shadow-md border-t-4 border-red-500 hover-lift">
+                        <span class="text-sm font-semibold text-red-500">2-Bosqich</span>
+                        <h4 class="text-xl font-bold mt-1">2. Ilk AI Modeli va Test</h4>
+                        <p class="text-gray-600">Ma'lumotlar to'plamini yig'ish, AI modelini tanlash (Gradient Boosting), birinchi to'liq funktsional modelni yaratish.</p>
+                    </div>
+                    <div class="w-10 h-10 bg-red-500 rounded-full absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center text-white font-bold hidden md:flex">2</div>
+                </div>
+
+                <!-- Bosqich 3: MVP -->
+                <div class="relative mb-8 flex justify-between items-center w-full md:left-auto md:right-auto md:flex-row-reverse">
+                    <div class="w-full md:w-5/12 p-4 bg-white rounded-lg shadow-md border-t-4 border-red-400 hover-lift">
+                        <span class="text-sm font-semibold text-red-400">3-Bosqich</span>
+                        <h4 class="text-xl font-bold mt-1">3. MVP Platformasi</h4>
+                        <p class="text-gray-600">Back-end (API) va Front-end (React) integratsiyasi, Foydalanuvchini autentifikatsiya qilish, Firestore yordamida natijalarni shaxsiy saqlash.</p>
+                    </div>
+                    <div class="w-10 h-10 bg-red-400 rounded-full absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center text-white font-bold hidden md:flex">3</div>
+                </div>
+
+                <!-- Bosqich 4: Ishga Tushirish -->
+                <div class="relative flex justify-between items-center w-full">
+                    <div class="w-full md:w-5/12 p-4 bg-white rounded-lg shadow-md border-t-4 border-red-300 hover-lift">
+                        <span class="text-sm font-semibold text-red-300">4-Bosqich</span>
+                        <h4 class="text-xl font-bold mt-1">4. Pilot va Klinik Tasdiqlash</h4>
+                        <p class="text-gray-600">Natijalarni mahalliy kardiologlar bilan tasdiqlash uchun klinik sinovdan o'tkazish, loyihani tibbiyot muassasalarida pilot rejimda sinovdan o'tkazish.</p>
+                    </div>
+                    <div class="w-10 h-10 bg-red-300 rounded-full absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center text-white font-bold hidden md:flex">4</div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 5. Muammoni Qanday Hal Qilmoqchisiz (Texnologiya) Section -->
+        <section id="qanday-hal" class="page-container mx-auto px-4 py-16">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800">
+                <span class="text-red-600">Qanday Hal Qilamiz?</span> Texnologik Yondashuv
+            </h3>
+
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Texnologiya va Stack - hover-lift klassi qo'llanildi -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover-lift border-l-4 border-transparent hover:border-l-red-600">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Asosiy Vositalar va Stack</h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center"><span class="font-bold w-32 text-red-600">Front-end:</span> React, Tailwind CSS (Responsiv dizayn)</li>
+                        <li class="flex items-center"><span class="font-bold w-32 text-red-600">Back-end:</span> Python (Flask/Django)</li>
+                        <li class="flex items-center"><span class="font-bold w-32 text-red-600">Database:</span> Google Cloud Firestore (Real-time va Xavfsiz saqlash)</li>
+                        <li class="flex items-center"><span class="font-bold w-32 text-red-600">AI/ML:</span> Scikit-learn, Pandas (Gradient Boosting)</li>
+                        <li class="flex items-center"><span class="font-bold w-32 text-red-600">Generative AI:</span> Gemini API (Shaxsiylashtirilgan tavsiyalar)</li>
+                    </ul>
+                </div>
+
+                <!-- AI Texnologiyalari - hover-lift klassi qo'llanildi -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover-lift border-l-4 border-transparent hover:border-l-red-600">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">AI Texnologiyalaridan Foydalanish</h4>
+                    <div class="space-y-4">
+                        <p class="text-lg font-semibold text-gray-700">1. Xavfni Tasniflash Modeli</p>
+                        <p class="text-gray-600">AI bemorning 8-12 ta asosiy ma'lumotlarini (yosh, chekish, bosim) tahlil qilib, <b>0 dan 100 gacha</b> bo'lgan Xavf Indeksini taqdim etadi.</p>
+                        
+                        <p class="text-lg font-semibold text-gray-700 mt-4">2. Tushuntirish (Explainable AI - XAI)</p>
+                        <p class="text-gray-600">SHAP kabi usullardan foydalanib, AI ning qaysi omillarni eng muhim deb hisoblaganini ko'rsatamiz. Bu natijalarga ishonchni oshiradi.</p>
+
+                        <p class="text-lg font-semibold text-gray-700 mt-4">3. Shaxsiylashtirilgan Tavsiyalar</p>
+                        <p class="text-gray-600">Generative AI (Gemini API) yordamida Xavf Indeksiga asoslangan holda, oziqlanish, jismoniy faollik va stressni boshqarish bo'yicha shaxsiy tavsiyalar matni yaratiladi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-8 mt-12">
+        <div class="page-container mx-auto text-center">
+            <p>&copy; 2025 CardioScan. Profilaktik Tibbiyotni Innovatsion Yechimlar Bilan Rivojlantirish.</p>
+            <p class="text-sm mt-2 text-gray-400">AI500! tanlovi uchun loyiha </p>
+        </div>
+    </footer>
+
+</body>
+</html>
